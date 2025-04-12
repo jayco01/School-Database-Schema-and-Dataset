@@ -1,0 +1,730 @@
+SQL> 
+SQL> -- This SQL command returns the name of the user who is running this script.
+SQL> prompt
+
+SQL> prompt Current User:
+Current User:
+SQL> select sys_context('USERENV', 'OS_USER') as current_user
+  2  from dual;
+
+CURRENT_USER                                                                                                                                                              
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Jays_Laptop\Jayve                                                                                                                                                         
+
+SQL> 
+SQL> -- This is where you put the formatting commands and SQL code that does what your
+SQL> -- assignment requires.
+SQL> 
+SQL> -- Run this script each time you add a table, to make sure that each step is
+SQL> -- working before you do the next.
+SQL> 
+SQL> 
+SQL> -- Start by TRUNCATING the tables here.
+SQL> -- Truncate the bridge tables (child tables) first, THEN Truncate the parent tables.
+SQL> --
+SQL> -- If the tables do not exist, you will get error messages.
+SQL> -- Make sure that your table creation script has been run before you run this script.
+SQL> --TRUNCATE TABLE tablename;
+SQL> 
+SQL> TRUNCATE TABLE sis_student_course_record;
+
+Table truncated.
+
+SQL> TRUNCATE TABLE sis_sched_course_instructor;
+
+Table truncated.
+
+SQL> TRUNCATE TABLE sis_course_prerequisite;
+
+Table truncated.
+
+SQL> TRUNCATE TABLE sis_credential_course;
+
+Table truncated.
+
+SQL> TRUNCATE TABLE sis_student_credential;
+
+Table truncated.
+
+SQL> TRUNCATE TABLE sis_scheduled_course;
+
+Table truncated.
+
+SQL> TRUNCATE TABLE sis_instructor;
+
+Table truncated.
+
+SQL> TRUNCATE TABLE sis_course;
+
+Table truncated.
+
+SQL> TRUNCATE TABLE sis_credential;
+
+Table truncated.
+
+SQL> TRUNCATE TABLE sis_student;
+
+Table truncated.
+
+SQL> 
+SQL> 
+SQL> ----------------------------------------------------------------------------------------------------------
+SQL> 
+SQL> -- Now POPULATE the tables. Use the INSERT command.
+SQL> 
+SQL> -- !!!!!!!!!! !!!!!!!!!! !!!!!!!!!! !!!!!!!!!! !!!!!!!!!!
+SQL> -- REMEMBER TO INCLUDE ANY AI PROMPTS THAT YOU HAVE USED!
+SQL> -- !!!!!!!!!! !!!!!!!!!! !!!!!!!!!! !!!!!!!!!! !!!!!!!!!!
+SQL> 
+SQL> -- Remember that, unlike other SQL databases, Oracle does not allow
+SQL> -- multiple rows of data to be inserted in a single INSERT statement.
+SQL> -- You will need a separate INSERT statement for each row of data.
+SQL> 
+SQL> 
+SQL> -- 1) SIS_STUDENT
+SQL> INSERT INTO sis_student VALUES (000111001, 'Luka', 'Doncic', '403.909.1001', 'A',	'23-JAN-2024', 'lucadoncic@gmail.com');
+
+1 row created.
+
+SQL> INSERT INTO sis_student VALUES (000110002, 'Lebron', 'James',  '403.903.0008', 'G',  '28-SEP-2010', 'lebronjames@kingj.com');
+
+1 row created.
+
+SQL> INSERT INTO sis_student VALUES (000111003, 'Devin', 'Booker', '403.902.6001', 'S',  '15-JAN-2023', 'devinbuckets@yahoo.com');
+
+1 row created.
+
+SQL> INSERT INTO sis_student VALUES (000110055, 'Kevin', 'Durant', '403.904.9009', 'A',  '21-MAY-2024', 'kevindurant@brick.com');
+
+1 row created.
+
+SQL> INSERT INTO sis_student VALUES (000111023, 'Lamelo', 'Ball',   '403.903.2001', 'AP', '13-MAY-2024', 'theproblem@icey.com');
+
+1 row created.
+
+SQL> INSERT INTO sis_student VALUES (000115000, 'Lonzo', 'Ball',   '403.903.2002', 'A',  '05-SEP-2024', 'lonzoball@bigballer.com');
+
+1 row created.
+
+SQL> INSERT INTO sis_student VALUES (000112004, 'Liangelo', 'Ball',   '403.902.0009', 'E',  '21-JAN-2023', 'gelo@rap.god');
+
+1 row created.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> -- 2) SIS_CREDENTIAL
+SQL> INSERT INTO sis_credential VALUES (098321,'Business','Finance','D');
+
+1 row created.
+
+SQL> INSERT INTO sis_credential VALUES (096325,'Engineering','Civil','DP');
+
+1 row created.
+
+SQL> INSERT INTO sis_credential VALUES (087952,'Advanced Digital Technology','Software Development','DP');
+
+1 row created.
+
+SQL> INSERT INTO sis_credential VALUES (079962,'Arts','Photography','CT');
+
+1 row created.
+
+SQL> INSERT INTO sis_credential VALUES (062235,'Advanced Digital Technology','Data Analysis','CT');
+
+1 row created.
+
+SQL> 
+SQL> 
+SQL> -- 3) SIS_COURSE
+SQL> -- Populating SIS_COURSE table
+SQL> 
+SQL> INSERT INTO sis_course VALUES ('FINC221', 'Introduction to Stock Market', 3.0);
+
+1 row created.
+
+SQL> INSERT INTO sis_course VALUES ('ACCT205', 'Introduction to Accounting', 3.0);
+
+1 row created.
+
+SQL> INSERT INTO sis_course VALUES ('FINC206', 'Introduction to Finance', 3.0);
+
+1 row created.
+
+SQL> INSERT INTO sis_course VALUES ('FINC240', 'Introduction to Excel and PowerBI', 3.0);
+
+1 row created.
+
+SQL> INSERT INTO sis_course VALUES ('BSNI305', 'Excel for Stock Market Data Analysis', 3.0);
+
+1 row created.
+
+SQL> INSERT INTO sis_course VALUES ('FINC310', 'Advance Finance Concepts', 3.0);
+
+1 row created.
+
+SQL> INSERT INTO sis_course VALUES ('FINC360', 'Futures, Crypto and Forex', 3.0);
+
+1 row created.
+
+SQL> INSERT INTO sis_course VALUES ('FINC420', 'Advance Corporate Finance', 3.0);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO sis_course VALUES ('MATH210', 'Linear Algebra', 3.0);
+
+1 row created.
+
+SQL> INSERT INTO sis_course VALUES ('ENGG212', 'Introduction to Structures and Designs', 3.0);
+
+1 row created.
+
+SQL> INSERT INTO sis_course VALUES ('ENGG201', 'Introduction to Engineering', 3.0);
+
+1 row created.
+
+SQL> INSERT INTO sis_course VALUES ('ENGG301', 'Advance Engineering Concepts', 3.0);
+
+1 row created.
+
+SQL> INSERT INTO sis_course VALUES ('PHYS305', 'Physics of Structures', 3.0);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO sis_course VALUES ('CPRG200', 'Object Oriented Programming 1', 3.0);
+
+1 row created.
+
+SQL> INSERT INTO sis_course VALUES ('CPRG203', 'Web Development 1', 3.0);
+
+1 row created.
+
+SQL> INSERT INTO sis_course VALUES ('COMM210', 'Technical Comminication', 3.0);
+
+1 row created.
+
+SQL> INSERT INTO sis_course VALUES ('CPRG300', 'Object Oriented Programming 2', 3.0);
+
+1 row created.
+
+SQL> INSERT INTO sis_course VALUES ('CPRG303', 'Web Development 2', 3.0);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO sis_course VALUES ('PHOT851', 'Photography Foundations 1', 6.0);
+
+1 row created.
+
+SQL> INSERT INTO sis_course VALUES ('PHOT852', 'Photography Foundations 2', 6.0);
+
+1 row created.
+
+SQL> INSERT INTO sis_course VALUES ('PHOT853', 'Photography Foundations 3', 6.0);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO sis_course VALUES ('DATA821', 'Data Analysis Foundations 1', 6.0);
+
+1 row created.
+
+SQL> INSERT INTO sis_course VALUES ('DATA822', 'Data Analysis Foundations 2', 6.0);
+
+1 row created.
+
+SQL> INSERT INTO sis_course VALUES ('DATA823', 'Corporate Data Analysis', 6.0);
+
+1 row created.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> -- 4) SIS_INSTRUCTOR
+SQL> INSERT INTO sis_instructor VALUES (00052030,'Michael','Jordan','23 Panorama St NW','Calgary','AB','T3A1E2','403.601.3000','michael@jordan.com');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO sis_instructor VALUES (00052031,'Larry','Bird','05 Crescent Heights Rd NE','Calgary','AB','T3A4E1','403.221.3203','lbird@edu.sait.com');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO sis_instructor VALUES (00052032,'Steve','Nash','13 Assist St','Vancouver','BC','V6B1V2','604.631.4050','snash@edu.sait.com');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO sis_instructor VALUES (00052033,'Magic','Johnson','90 Seton Main St','Calgary','AB','T3A2B5','403.332.4009','magicj@edu.sait.com');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO sis_instructor VALUES (00052034,'Shaquille','ONeal','48 Dunk Valley Rd','Red Deer','AB','T5A3H2','403.621.0478','shaq@edu.sait.com');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO sis_instructor VALUES (00052035,'Tim','Duncan','9865 University Road NW','Calgary','AB','T3A4N6','403.221.9846','timduncan@edu.sait.com');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO sis_instructor VALUES (00052036,'Bill','Russell','652 Forest Lawn NE','Calgary','AB','T3B2P9','403.591.3986','billrussell@edu.sait.com');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO sis_instructor VALUES (00052037,'Kareem','Abdul-Jabbar','33 Skyhook Ave','Toronto','ON','M5V3C9','416.983.3300','kareem@edu.sait.com');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO sis_instructor VALUES (00052038,'Wilt','Chamberlain','13 Dipper Drive','Montreal','QC','H3Z2Y7','514.764.1313','wilt@edu.sait.com');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO sis_instructor VALUES (00052039,'Dirk','Nowitzki','41 Uptown Drive','Winnipeg','MB','R3C1V9','204.321.4141','dnowitzki@edu.sait.com');
+
+1 row created.
+
+SQL> 
+SQL> 
+SQL> -- 5) SIS_SCHEDULED_COURSE
+SQL> INSERT INTO sis_scheduled_course VALUES (10001, 202401, 'FINC221', 'A');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO sis_scheduled_course VALUES (10002, 202401, 'ACCT205', 'B');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO sis_scheduled_course VALUES (10009, 202401, 'PHOT851', 'C');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO sis_scheduled_course VALUES (10003, 202402, 'FINC206', 'A');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO sis_scheduled_course VALUES (10004, 202402, 'FINC240', 'B');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO sis_scheduled_course VALUES (10005, 202403, 'CPRG200', 'A');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO sis_scheduled_course VALUES (10006, 202403, 'MATH210', 'C');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO sis_scheduled_course VALUES (10010, 202403, 'ENGG201', 'D');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO sis_scheduled_course VALUES (10007, 202404, 'DATA821', 'A');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO sis_scheduled_course VALUES (10008, 202404, 'CPRG300', 'B');
+
+1 row created.
+
+SQL> 
+SQL> 
+SQL> ------------------------------------------------------------------------
+SQL> --After writing the insert statements for the parent tables, I copied my entire script and pasted it to CHATGPT4.0 to give it some context. I then wrote the prompts below.
+SQL> --I tested a few prompts before I figured out a prompt "Template" that gave me the correct SQL script format that I wanted.
+SQL> /*
+SQL> TEMPLATE:
+SQL> 	 Step 1
+SQL> 	 - state the table name, oracle version and column names
+SQL> 	 Step 2
+SQL> 	 - state the business rules relevant to the table
+SQL> 	 step 3
+SQL> 	 - clarify any specific rules that was confusing or was not explicitly stated in the business rules
+SQL> */
+SQL> ------------------------------------------------------------------------
+SQL> 
+SQL> -- 6) SIS_STUDENT_CREDENTIAL
+SQL> /*
+SQL> AI Prompt
+SQL> "I’m working on populating my SIS_STUDENT_CREDENTIAL table in Oracle 21c. The columns are: (student_id, credential_number, start_date, completion_date, credential_status).
+SQL> 
+SQL> Here's what I need:
+SQL> 2 students should have 1 credential each
+SQL> 1 student should have 2 credentials
+SQL> 
+SQL> I’ve got 7 students in total and 5 credentials
+SQL> 
+SQL> Status can be 'A' for active, 'G' for granted, or 'E' for expired
+SQL> Can you create realistic insert statements using the DD-MON-YYYY date format?"
+SQL> 
+SQL> "Optimize the script. If someone started in 2010, the completion date should land somewhere around 2014. Also, just make sure the status makes sense, like if the credential is completed, the status should be 'G'."
+SQL> */
+SQL> INSERT INTO sis_student_credential VALUES (000111001,098321,'24-JAN-2024',NULL,'A');
+
+1 row created.
+
+SQL> INSERT INTO sis_student_credential VALUES (000111003,079962,'15-JAN-2023',NULL,'E');
+
+1 row created.
+
+SQL> INSERT INTO sis_student_credential VALUES (000110055,087952,'21-MAY-2024','15-DEC-2025','G');
+
+1 row created.
+
+SQL> INSERT INTO sis_student_credential VALUES (000110055,062235,'16-DEC-2025',NULL,'A');
+
+1 row created.
+
+SQL> INSERT INTO sis_student_credential VALUES (000110002,096325,'28-SEP-2010','30-APR-2014','G');
+
+1 row created.
+
+SQL> 
+SQL> 
+SQL> -- 7) SIS_CREDENTIAL_COURSE
+SQL> /*
+SQL> AI Prompt
+SQL> "I'm working on the SIS_CREDENTIAL_COURSE bridging table in Oracle 21c. Columns are:
+SQL> (credential_number, course_code, type_flag) where type_flag is 1 for required, 0 for optional.
+SQL> 
+SQL> Here’s the setup:
+SQL> 2 certificates, each should have 2 to 3 courses
+SQL> 2 diplomas, around 5 courses each
+SQL> 1 finance degree with about 6 courses
+SQL> 
+SQL> I’m aiming for 4–5 required and 1–2 optional per diploma or degree.
+SQL> 
+SQL> Can you generate realistic insert statements using existing credential numbers like 098321, 096325, etc., and course codes like FINC221, CPRG200, etc.?"
+SQL> */
+SQL> INSERT INTO sis_credential_course VALUES (098321,'FINC221',1);
+
+1 row created.
+
+SQL> INSERT INTO sis_credential_course VALUES (098321,'ACCT205',0);
+
+1 row created.
+
+SQL> INSERT INTO sis_credential_course VALUES (098321,'FINC206',1);
+
+1 row created.
+
+SQL> INSERT INTO sis_credential_course VALUES (098321,'FINC310',1);
+
+1 row created.
+
+SQL> INSERT INTO sis_credential_course VALUES (098321,'FINC240',1);
+
+1 row created.
+
+SQL> INSERT INTO sis_credential_course VALUES (098321,'FINC420',1);
+
+1 row created.
+
+SQL> INSERT INTO sis_credential_course VALUES (096325,'ENGG201',1);
+
+1 row created.
+
+SQL> INSERT INTO sis_credential_course VALUES (096325,'ENGG212',1);
+
+1 row created.
+
+SQL> INSERT INTO sis_credential_course VALUES (096325,'ENGG301',1);
+
+1 row created.
+
+SQL> INSERT INTO sis_credential_course VALUES (096325,'MATH210',1);
+
+1 row created.
+
+SQL> INSERT INTO sis_credential_course VALUES (096325,'PHYS305',1);
+
+1 row created.
+
+SQL> INSERT INTO sis_credential_course VALUES (087952,'CPRG200',1);
+
+1 row created.
+
+SQL> INSERT INTO sis_credential_course VALUES (087952,'CPRG203',1);
+
+1 row created.
+
+SQL> INSERT INTO sis_credential_course VALUES (087952,'CPRG300',1);
+
+1 row created.
+
+SQL> INSERT INTO sis_credential_course VALUES (087952,'CPRG303',1);
+
+1 row created.
+
+SQL> INSERT INTO sis_credential_course VALUES (087952,'COMM210',0);
+
+1 row created.
+
+SQL> INSERT INTO sis_credential_course VALUES (079962,'PHOT851',1);
+
+1 row created.
+
+SQL> INSERT INTO sis_credential_course VALUES (079962,'PHOT852',1);
+
+1 row created.
+
+SQL> INSERT INTO sis_credential_course VALUES (079962,'PHOT853',0);
+
+1 row created.
+
+SQL> INSERT INTO sis_credential_course VALUES (062235,'DATA821',1);
+
+1 row created.
+
+SQL> INSERT INTO sis_credential_course VALUES (062235,'DATA822',1);
+
+1 row created.
+
+SQL> INSERT INTO sis_credential_course VALUES (062235,'DATA823',0);
+
+1 row created.
+
+SQL> 
+SQL> 
+SQL> -- 8) SIS_COURSE_PREREQUISITE
+SQL> /*
+SQL> AI Prompt
+SQL> "I'm working on the SIS_COURSE_PREREQUISITE table in Oracle 21c. Columns are: (prerequisite_course_code, course_code).
+SQL> 
+SQL> Constraints:
+SQL> A course can have 0, 1, or multiple prerequisites
+SQL> A course can’t be its own prerequisite
+SQL> 
+SQL> I’ve got courses like FINC206, FINC310, FINC360, etc.
+SQL> Can you create logical prerequisite relationships? Like advanced finance courses should require intro-level ones (e.g. FINC310 needs FINC206).
+SQL> Same for engineering, ENGG301 should need ENGG201.
+SQL> 
+SQL> Also, include a couple for data analysis. Something like DATA822 needs DATA821, and DATA823 needs DATA822.
+SQL> Just generate insert statements that make sense."
+SQL> */
+SQL> INSERT INTO sis_course_prerequisite VALUES ('FINC206','FINC310');
+
+1 row created.
+
+SQL> INSERT INTO sis_course_prerequisite VALUES ('FINC310','FINC360');
+
+1 row created.
+
+SQL> INSERT INTO sis_course_prerequisite VALUES ('FINC310','FINC420');
+
+1 row created.
+
+SQL> INSERT INTO sis_course_prerequisite VALUES ('ENGG201','ENGG301');
+
+1 row created.
+
+SQL> INSERT INTO sis_course_prerequisite VALUES ('CPRG200','CPRG300');
+
+1 row created.
+
+SQL> INSERT INTO sis_course_prerequisite VALUES ('CPRG203','CPRG303');
+
+1 row created.
+
+SQL> INSERT INTO sis_course_prerequisite VALUES ('DATA821','DATA822');
+
+1 row created.
+
+SQL> INSERT INTO sis_course_prerequisite VALUES ('DATA822','DATA823');
+
+1 row created.
+
+SQL> 
+SQL> 
+SQL> -- 9) SIS_SCHED_COURSE_INSTRUCTOR
+SQL> /*
+SQL> AI Prompt
+SQL> "I'm filling the SIS_SCHED_COURSE_INSTRUCTOR bridging table in Oracle 21c. Columns are: (crn, semester_code, instructor_id).
+SQL> 
+SQL> Each scheduled course can have one or more instructors.
+SQL> I’ve got CRNs like 10001, 10002, etc. (from SIS_SCHEDULED_COURSE), and instructor IDs like 00052030, 00052031, etc.
+SQL> 
+SQL> Can you give me around 12–15 insert statements that assign instructors to scheduled courses?
+SQL> Make sure every course has at least one instructor, and include at least one course that’s co-taught by two instructors."
+SQL> */
+SQL> INSERT INTO sis_sched_course_instructor VALUES (10001,202401,00052030);
+
+1 row created.
+
+SQL> INSERT INTO sis_sched_course_instructor VALUES (10002,202401,00052031);
+
+1 row created.
+
+SQL> INSERT INTO sis_sched_course_instructor VALUES (10009,202401,00052032);
+
+1 row created.
+
+SQL> INSERT INTO sis_sched_course_instructor VALUES (10009,202401,00052033);
+
+1 row created.
+
+SQL> INSERT INTO sis_sched_course_instructor VALUES (10003,202402,00052034);
+
+1 row created.
+
+SQL> INSERT INTO sis_sched_course_instructor VALUES (10004,202402,00052035);
+
+1 row created.
+
+SQL> INSERT INTO sis_sched_course_instructor VALUES (10005,202403,00052036);
+
+1 row created.
+
+SQL> INSERT INTO sis_sched_course_instructor VALUES (10006,202403,00052037);
+
+1 row created.
+
+SQL> INSERT INTO sis_sched_course_instructor VALUES (10010,202403,00052038);
+
+1 row created.
+
+SQL> INSERT INTO sis_sched_course_instructor VALUES (10007,202404,00052039);
+
+1 row created.
+
+SQL> INSERT INTO sis_sched_course_instructor VALUES (10008,202404,00052030);
+
+1 row created.
+
+SQL> INSERT INTO sis_sched_course_instructor VALUES (10008,202404,00052031);
+
+1 row created.
+
+SQL> 
+SQL> 
+SQL> -- 10) SIS_STUDENT_COURSE_RECORD
+SQL> /*
+SQL> AI Prompt
+SQL> "I'm working on the SIS_STUDENT_COURSE_RECORD table in Oracle 21c. Columns are:
+SQL> (crn, semester_code, course_code, student_id, letter_grade).
+SQL> 
+SQL> I need 20 rows total. Here are the given rules:
+SQL> Multiple students can be in the same scheduled course
+SQL> Grades can be A, A+, B, B+, C, D, F, or I for incomplete
+SQL> Make sure each (crn, semester_code, course_code) exists in SIS_SCHEDULED_COURSE
+SQL> Spread the records across 7 students
+SQL> 
+SQL> Generate realistic insert statements."
+SQL> */
+SQL> -- Summer 2024
+SQL> INSERT INTO sis_student_course_record VALUES (10001,202401,'FINC221',000111001,'A+');
+
+1 row created.
+
+SQL> INSERT INTO sis_student_course_record VALUES (10001,202401,'FINC221',000111023,'B');
+
+1 row created.
+
+SQL> INSERT INTO sis_student_course_record VALUES (10002,202401,'ACCT205',000110002,'A');
+
+1 row created.
+
+SQL> INSERT INTO sis_student_course_record VALUES (10002,202401,'ACCT205',000111023,'C-');
+
+1 row created.
+
+SQL> INSERT INTO sis_student_course_record VALUES (10009,202401,'PHOT851',000111003,'F');
+
+1 row created.
+
+SQL> INSERT INTO sis_student_course_record VALUES (10009,202401,'PHOT851',000110055,'A-');
+
+1 row created.
+
+SQL> 
+SQL> -- Fall 2024
+SQL> INSERT INTO sis_student_course_record VALUES (10003,202402,'FINC206',000110055,'B+');
+
+1 row created.
+
+SQL> INSERT INTO sis_student_course_record VALUES (10003,202402,'FINC206',000112004,'I');
+
+1 row created.
+
+SQL> INSERT INTO sis_student_course_record VALUES (10004,202402,'FINC240',000110002,'C+');
+
+1 row created.
+
+SQL> 
+SQL> -- Winter 2025
+SQL> INSERT INTO sis_student_course_record VALUES (10005,202403,'CPRG200',000111003,'B');
+
+1 row created.
+
+SQL> INSERT INTO sis_student_course_record VALUES (10005,202403,'CPRG200',000115000,'B+');
+
+1 row created.
+
+SQL> INSERT INTO sis_student_course_record VALUES (10006,202403,'MATH210',000111001,'A');
+
+1 row created.
+
+SQL> INSERT INTO sis_student_course_record VALUES (10006,202403,'MATH210',000111023,'A+');
+
+1 row created.
+
+SQL> INSERT INTO sis_student_course_record VALUES (10010,202403,'ENGG201',000112004,'D+');
+
+1 row created.
+
+SQL> 
+SQL> -- Spring 2025
+SQL> INSERT INTO sis_student_course_record VALUES (10007,202404,'DATA821',000115000,'A+');
+
+1 row created.
+
+SQL> INSERT INTO sis_student_course_record VALUES (10007,202404,'DATA821',000110002,'F');
+
+1 row created.
+
+SQL> INSERT INTO sis_student_course_record VALUES (10008,202404,'CPRG300',000111001,'B-');
+
+1 row created.
+
+SQL> INSERT INTO sis_student_course_record VALUES (10008,202404,'CPRG300',000110055,'A');
+
+1 row created.
+
+SQL> INSERT INTO sis_student_course_record VALUES (10008,202404,'CPRG300',000111003,'I');
+
+1 row created.
+
+SQL> INSERT INTO sis_student_course_record VALUES (10008,202404,'CPRG300',000112004,'B+');
+
+1 row created.
+
+SQL> 
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> 
+SQL> -- This is where you end the assignment's SQL code.
+SQL> -- After this, the following commands stop writing the output to the
+SQL> -- screen and spool output file, and reset any formatting commands
+SQL> -- that may have been part of the SQL code.
+SQL> 
+SQL> -- This SQL*Plus command stops displaying the commands as they execute.
+SQL> set echo off

@@ -1,0 +1,308 @@
+SQL> 
+SQL> column "Current User" format A25
+SQL> column "When Executed" format A22
+SQL> -- This SQL command returns the name of the user who is running this script.
+SQL> prompt
+
+SQL> 
+SQL> prompt Current User:
+Current User:
+SQL> 
+SQL> select sys_context(
+  2  	'USERENV',
+  3  	'OS_USER'
+  4  ) as "Current User",
+  5  	    to_char(
+  6  	       sysdate,
+  7  	       'YYYY-MM-DD HH24:MI:SS'
+  8  	    ) as "When Executed"
+  9    from dual;
+
+Current User              When Executed                                                                                                                                   
+------------------------- ----------------------                                                                                                                          
+Jays_Laptop\Jayve         2025-04-02 17:59:57                                                                                                                             
+
+SQL> 
+SQL> -- This is the beginning of the sql code.
+SQL> drop table sis_student_course_record cascade constraints;
+
+Table dropped.
+
+SQL> drop table sis_sched_course_instructor cascade constraints;
+
+Table dropped.
+
+SQL> drop table sis_course_prerequisite cascade constraints;
+
+Table dropped.
+
+SQL> drop table sis_credential_course cascade constraints;
+
+Table dropped.
+
+SQL> drop table sis_student_credential cascade constraints;
+
+Table dropped.
+
+SQL> drop table sis_instructor cascade constraints;
+
+Table dropped.
+
+SQL> drop table sis_scheduled_course cascade constraints;
+
+Table dropped.
+
+SQL> drop table sis_course cascade constraints;
+
+Table dropped.
+
+SQL> drop table sis_credential cascade constraints;
+
+Table dropped.
+
+SQL> drop table sis_student cascade constraints;
+
+Table dropped.
+
+SQL> 
+SQL> --1
+SQL> create table sis_student (
+  2  	student_id   number,
+  3  	first_name   nvarchar2(50) not null,
+  4  	last_name    nvarchar2(50) not null,
+  5  	phone_number nchar(12) not null,
+  6  	status	     nvarchar2(2) not null,
+  7  	status_date  date not null,
+  8  	email	     nvarchar2(100) not null,
+  9  	constraint student_phone_ck check ( regexp_like ( phone_number,
+ 10  							  '^[0-9]{3}\.[0-9]{3}\.[0-9]{4}$' ) ),
+ 11  	constraint student_email_ck check ( regexp_like ( email,
+ 12  							  '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$' ) ),
+ 13  	constraint student_email_uk unique ( email ),
+ 14  	constraint student_phone_uk unique ( phone_number )
+ 15  );
+
+Table created.
+
+SQL> 
+SQL> alter table sis_student add constraint student_pk primary key ( student_id );
+
+Table altered.
+
+SQL> 
+SQL> 
+SQL> --2
+SQL> create table sis_credential (
+  2  	credential_number number
+  3  	   constraint credential_number_pk primary key,
+  4  	school_associated nvarchar2(50) not null,
+  5  	name		  nvarchar2(50) not null,
+  6  	type		  nvarchar2(2) not null,
+  7  	constraint cred_type_ck
+  8  	   check ( type in ( 'MI',
+  9  			     'FT',
+ 10  			     'CT',
+ 11  			     'DP',
+ 12  			     'AD',
+ 13  			     'D' ) )
+ 14  );
+
+Table created.
+
+SQL> 
+SQL> 
+SQL> --3
+SQL> create table sis_course (
+  2  	course_code    nchar(7)
+  3  	   constraint course_code_ck check ( regexp_like ( course_code,
+  4  							   '^[A-Z]{4}\d{3}$' ) ),
+  5  	name	       nvarchar2(100) not null,
+  6  	num_of_credits number(2,1) not null,
+  7  	constraint course_num_cred_ck check ( num_of_credits between 0.5 and 9 ),
+  8  	constraint course_code_pk primary key ( course_code )
+  9  );
+
+Table created.
+
+SQL> 
+SQL> 
+SQL> --4
+SQL> create table sis_scheduled_course (
+  2  	crn	      number(5),
+  3  	semester_code number(6),
+  4  	course_code   nchar(7) not null,
+  5  	section_code  nchar(1) not null,
+  6  	constraint scheduled_course_pk primary key ( crn,
+  7  						     semester_code ),
+  8  	constraint scheduled_course_sem_code_ck check ( regexp_like ( semester_code,
+  9  								      '^(19|20)\d{2}(01|02|03|04)$' ) ),
+ 10  	constraint scheduled_course_section_ck check ( regexp_like ( section_code,
+ 11  								     '^[A-Z]$' ) ),
+ 12  	constraint course_sched_course_code_fk foreign key ( course_code )
+ 13  	   references sis_course ( course_code )
+ 14  );
+
+Table created.
+
+SQL> 
+SQL> 
+SQL> --5
+SQL> create table sis_instructor (
+  2  	instructor_id number
+  3  	   constraint instructor_id_pk primary key,
+  4  	first_name    nvarchar2(50) not null,
+  5  	last_name     nvarchar2(50) not null,
+  6  	address       nvarchar2(100) not null,
+  7  	city	      nvarchar2(40) not null,
+  8  	province      nchar(2) not null,
+  9  	postal_code   nchar(6) not null,
+ 10  	phone_number  nchar(12) not null,
+ 11  	email	      nvarchar2(100) not null,
+ 12  	constraint instructor_email_uk unique ( email ),
+ 13  	constraint instructor_phone_uk unique ( phone_number ),
+ 14  	constraint instructor_prov_ck
+ 15  	   check ( province in ( 'AB',
+ 16  				 'BC',
+ 17  				 'SK',
+ 18  				 'MB',
+ 19  				 'NB',
+ 20  				 'NL',
+ 21  				 'NT',
+ 22  				 'NS',
+ 23  				 'NU',
+ 24  				 'ON',
+ 25  				 'PE',
+ 26  				 'QC',
+ 27  				 'YT' ) ),
+ 28  	constraint instructor_postal_ck check ( regexp_like ( postal_code,
+ 29  							      '^[A-Z][0-9][A-Z][0-9][A-Z][0-9]$' ) ),
+ 30  	constraint instructor_phone_ck check ( regexp_like ( phone_number,
+ 31  							     '^\d{3}\.\d{3}\.\d{4}$' ) ),
+ 32  	constraint instructor_email_ck check ( regexp_like ( email,
+ 33  							     '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$' ) )
+ 34  );
+
+Table created.
+
+SQL> 
+SQL> 
+SQL> --6
+SQL> create table sis_student_credential (
+  2  	student_id	  number,
+  3  	credential_number number,
+  4  	start_date	  date not null,
+  5  	completion_date   date,
+  6  	credential_status nchar(1) not null,
+  7  	constraint student_cred_pk primary key ( student_id,
+  8  						 credential_number ),
+  9  	constraint student_studentcred_fk foreign key ( student_id )
+ 10  	   references sis_student ( student_id ),
+ 11  	constraint cred_studentcred_fk foreign key ( credential_number )
+ 12  	   references sis_credential ( credential_number )
+ 13  );
+
+Table created.
+
+SQL> 
+SQL> alter table sis_student_credential add constraint credential_status_ck
+  2  	   check ( credential_status in ( 'A',
+  3  					  'G',
+  4  					  'E' ) );
+
+Table altered.
+
+SQL> 
+SQL> 
+SQL> --7
+SQL> create table sis_credential_course (
+  2  	credential_number number,
+  3  	course_code	  nchar(7),
+  4  	type_flag	  number(1) not null,
+  5  	constraint type_flag_ck check ( type_flag in ( 1,
+  6  						       2 ) ),
+  7  	constraint cred_course_pk primary key ( credential_number,
+  8  						course_code ),
+  9  	constraint cred_credcourse_fk foreign key ( credential_number )
+ 10  	   references sis_credential ( credential_number ),
+ 11  	constraint course_credcourse_fk foreign key ( course_code )
+ 12  	   references sis_course ( course_code )
+ 13  );
+
+Table created.
+
+SQL> 
+SQL> 
+SQL> --8
+SQL> create table sis_course_prerequisite (
+  2  	prerequisite_course_code nchar(7),
+  3  	course_code		 nchar(7),
+  4  	constraint course_prereq_pk primary key ( prerequisite_course_code,
+  5  						  course_code ),
+  6  	constraint course_prereq_fk foreign key ( course_code )
+  7  	   references sis_course ( course_code )
+  8  );
+
+Table created.
+
+SQL> 
+SQL> alter table sis_course_prerequisite add constraint prereqcourse_code_ck
+  2  	   check (prerequisite_course_code != course_code);
+
+Table altered.
+
+SQL> 
+SQL> 
+SQL> --9
+SQL> create table sis_sched_course_instructor (
+  2  	crn	      number(5),
+  3  	semester_code number(6),
+  4  	instructor_id number,
+  5  	constraint sc_instructor_pk primary key ( crn,
+  6  						  semester_code,
+  7  						  instructor_id ),
+  8  	constraint sc_instructor_fk
+  9  	   foreign key ( crn,
+ 10  			 semester_code )
+ 11  	      references sis_scheduled_course ( crn,
+ 12  						semester_code ),
+ 13  	constraint instructor_sc_fk foreign key ( instructor_id )
+ 14  	   references sis_instructor ( instructor_id )
+ 15  );
+
+Table created.
+
+SQL> 
+SQL> 
+SQL> --10
+SQL> create table sis_student_course_record (
+  2  	crn	      number(5),
+  3  	semester_code number(6),
+  4  	course_code   nchar(7) not null,
+  5  	student_id    number not null,
+  6  	letter_grade  nvarchar2(2) not null,
+  7  	constraint sc_record_grade_ck check ( regexp_like ( letter_grade,
+  8  							       '^(A(\+|-)?|B(\+|-)?|C(\+|-)?|D(\+|-)?|F|I)$' ) ),
+  9  	constraint sc_record_pk primary key ( crn,
+ 10  					      semester_code,
+ 11  					      course_code ),
+ 12  	constraint sc_record_fk
+ 13  	   foreign key ( crn,
+ 14  			 semester_code )
+ 15  	      references sis_scheduled_course ( crn,
+ 16  						semester_code ),
+ 17  	constraint course_sc_record_fk foreign key ( course_code )
+ 18  	   references sis_course ( course_code ),
+ 19  	constraint student_sc_student_fk foreign key ( student_id )
+ 20  	   references sis_student ( student_id )
+ 21  );
+
+Table created.
+
+SQL> 
+SQL> -- This is where you end the assignment's SQL code.
+SQL> -- After this, the following commands stop writing the output to the
+SQL> -- screen and spool output file, and reset any formatting commands
+SQL> -- that may have been part of the SQL code.
+SQL> 
+SQL> -- This SQL*Plus command stops displaying the commands as they execute.
+SQL> 	set echo off
