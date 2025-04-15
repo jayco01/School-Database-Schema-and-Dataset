@@ -1,0 +1,78 @@
+***
+-After writing the insert statements for the parent tables, I copied my entire script and pasted it to CHATGPT4.0 to give it some context. I then wrote the prompts below.
+-I tested a few prompts before I figured out a prompt "Template" that gave me the correct SQL script format that I wanted.
+TEMPLATE:
+    Step 1
+    - state the table name, oracle version and column names
+    Step 2
+    - state the business rules relevant to the table
+    step 3
+    - clarify any specific rules that was confusing or was not explicitly stated in the business rules 
+***
+
+
+1. SIS_STUDENT_CREDENTIAL
+"I’m working on populating my SIS_STUDENT_CREDENTIAL table in Oracle 21c. The columns are: (student_id, credential_number, start_date, completion_date, credential_status).
+
+Here's what I need:
+2 students should have 1 credential each
+1 student should have 2 credentials
+
+I’ve got 7 students in total and 5 credentials
+
+Status can be 'A' for active, 'G' for granted, or 'E' for expired
+Can you create realistic insert statements using the DD-MON-YYYY date format?"
+
+"Optimize the script. If someone started in 2010, the completion date should land somewhere around 2014. Also, just make sure the status makes sense, like if the credential is completed, the status should be 'G'."
+
+
+2. SIS_CREDENTIAL_COURSE
+"I'm working on the SIS_CREDENTIAL_COURSE bridging table in Oracle 21c. Columns are:
+(credential_number, course_code, type_flag) where type_flag is 1 for required, 0 for optional.
+
+Here’s the setup:
+2 certificates, each should have 2 to 3 courses
+2 diplomas, around 5 courses each
+1 finance degree with about 6 courses
+
+I’m aiming for 4–5 required and 1–2 optional per diploma or degree.
+
+Can you generate realistic insert statements using existing credential numbers like 098321, 096325, etc., and course codes like FINC221, CPRG200, etc.?"
+
+
+3. SIS_COURSE_PREREQUISITE
+"I'm working on the SIS_COURSE_PREREQUISITE table in Oracle 21c. Columns are: (prerequisite_course_code, course_code).
+
+Constraints:
+A course can have 0, 1, or multiple prerequisites
+A course can’t be its own prerequisite
+
+I’ve got courses like FINC206, FINC310, FINC360, etc.
+Can you create logical prerequisite relationships? Like advanced finance courses should require intro-level ones (e.g. FINC310 needs FINC206).
+Same for engineering, ENGG301 should need ENGG201.
+
+Also, include a couple for data analysis. Something like DATA822 needs DATA821, and DATA823 needs DATA822.
+Just generate insert statements that make sense."
+
+
+4. SIS_SCHED_COURSE_INSTRUCTOR
+"I'm filling the SIS_SCHED_COURSE_INSTRUCTOR bridging table in Oracle 21c. Columns are: (crn, semester_code, instructor_id).
+
+Each scheduled course can have one or more instructors.
+I’ve got CRNs like 10001, 10002, etc. (from SIS_SCHEDULED_COURSE), and instructor IDs like 00052030, 00052031, etc.
+
+Can you give me around 12–15 insert statements that assign instructors to scheduled courses?
+Make sure every course has at least one instructor, and include at least one course that’s co-taught by two instructors."
+
+
+5. SIS_STUDENT_COURSE_RECORD
+"I'm working on the SIS_STUDENT_COURSE_RECORD table in Oracle 21c. Columns are:
+(crn, semester_code, course_code, student_id, letter_grade).
+
+I need 20 rows total. Here are the given rules:
+Multiple students can be in the same scheduled course
+Grades can be A, A+, B, B+, C, D, F, or I for incomplete
+Make sure each (crn, semester_code, course_code) exists in SIS_SCHEDULED_COURSE
+Spread the records across 7 students
+
+Generate realistic insert statements."
