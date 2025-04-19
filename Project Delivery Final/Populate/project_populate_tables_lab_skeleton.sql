@@ -343,16 +343,28 @@ INSERT INTO sis_scheduled_course VALUES (40052, 202402, 'ACCT310', 'B');
 INSERT INTO sis_scheduled_course VALUES (40053, 202403, 'MKTG101', 'C');
 INSERT INTO sis_scheduled_course VALUES (40054, 202404, 'MKTG204', 'D');
 INSERT INTO sis_scheduled_course VALUES (40055, 202401, 'MECH220', 'E');
-INSERT INTO sis_scheduled_course VALUES (40056, 202402, 'MECH310', 'F');
-INSERT INTO sis_scheduled_course VALUES (40057, 202403, 'MECH330', 'G');
-INSERT INTO sis_scheduled_course VALUES (40058, 202404, 'NURS101', 'H');
-INSERT INTO sis_scheduled_course VALUES (40059, 202401, 'NURS210', 'I');
-INSERT INTO sis_scheduled_course VALUES (40060, 202402, 'CYBR110', 'J');
-INSERT INTO sis_scheduled_course VALUES (40061, 202403, 'CYBR210', 'K');
-INSERT INTO sis_scheduled_course VALUES (40062, 202404, 'CULN100', 'L');
-INSERT INTO sis_scheduled_course VALUES (40063, 202401, 'CULN200', 'M');
-INSERT INTO sis_scheduled_course VALUES (40064, 202402, 'GRPH101', 'N');
-INSERT INTO sis_scheduled_course VALUES (40065, 202403, 'GRPH202', 'O');
+INSERT INTO sis_scheduled_course VALUES (40056, 202402, 'MECH310', 'A');
+INSERT INTO sis_scheduled_course VALUES (40057, 202403, 'MECH330', 'B');
+INSERT INTO sis_scheduled_course VALUES (40058, 202404, 'NURS101', 'C');
+INSERT INTO sis_scheduled_course VALUES (40059, 202401, 'NURS210', 'D');
+INSERT INTO sis_scheduled_course VALUES (40060, 202402, 'CYBR110', 'E');
+INSERT INTO sis_scheduled_course VALUES (40061, 202403, 'CYBR210', 'A');
+INSERT INTO sis_scheduled_course VALUES (40062, 202404, 'CULN100', 'B');
+INSERT INTO sis_scheduled_course VALUES (40063, 202401, 'CULN200', 'C');
+INSERT INTO sis_scheduled_course VALUES (40064, 202402, 'GRPH101', 'D');
+INSERT INTO sis_scheduled_course VALUES (40065, 202403, 'GRPH202', 'E');
+INSERT INTO sis_scheduled_course VALUES (40066, 202401, 'COMM210', 'A');
+INSERT INTO sis_scheduled_course VALUES (40067, 202402, 'CPRG203', 'B');
+INSERT INTO sis_scheduled_course VALUES (40068, 202403, 'CPRG303', 'C');
+INSERT INTO sis_scheduled_course VALUES (40069, 202404, 'DATA822', 'D');
+INSERT INTO sis_scheduled_course VALUES (40070, 202401, 'DATA823', 'E');
+INSERT INTO sis_scheduled_course VALUES (40071, 202402, 'ENGG212', 'A');
+INSERT INTO sis_scheduled_course VALUES (40072, 202403, 'ENGG301', 'B');
+INSERT INTO sis_scheduled_course VALUES (40073, 202404, 'FINC310', 'C');
+INSERT INTO sis_scheduled_course VALUES (40074, 202401, 'FINC420', 'D');
+INSERT INTO sis_scheduled_course VALUES (40075, 202402, 'PHOT852', 'E');
+INSERT INTO sis_scheduled_course VALUES (40076, 202403, 'PHOT853', 'A');
+INSERT INTO sis_scheduled_course VALUES (40077, 202404, 'PHYS305', 'B');
 
 
 
