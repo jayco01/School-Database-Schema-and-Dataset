@@ -686,7 +686,18 @@ INSERT INTO sis_sched_course_instructor VALUES (40064,202402,00052042);
 INSERT INTO sis_sched_course_instructor VALUES (40065,202403,00052035);
 INSERT INTO sis_sched_course_instructor VALUES (40065,202403,00052032);
 
-
+INSERT INTO sis_sched_course_instructor VALUES (40066,202401,00052030);
+INSERT INTO sis_sched_course_instructor VALUES (40067,202402,00052031);
+INSERT INTO sis_sched_course_instructor VALUES (40068,202403,00052032);
+INSERT INTO sis_sched_course_instructor VALUES (40069,202404,00052033);
+INSERT INTO sis_sched_course_instructor VALUES (40070,202401,00052034);
+INSERT INTO sis_sched_course_instructor VALUES (40071,202402,00052035);
+INSERT INTO sis_sched_course_instructor VALUES (40072,202403,00052036);
+INSERT INTO sis_sched_course_instructor VALUES (40073,202404,00052037);
+INSERT INTO sis_sched_course_instructor VALUES (40074,202401,00052038);
+INSERT INTO sis_sched_course_instructor VALUES (40075,202402,00052039);
+INSERT INTO sis_sched_course_instructor VALUES (40076,202403,00052040);
+INSERT INTO sis_sched_course_instructor VALUES (40077,202404,00052041);
 
 -- 10) SIS_STUDENT_COURSE_RECORD
 /*
