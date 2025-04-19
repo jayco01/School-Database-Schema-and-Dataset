@@ -246,7 +246,7 @@ INSERT INTO sis_course VALUES ('MECH330', 'Mechanical Systems Design', 3.0);
 
 -- Health Sciences: Nursing
 INSERT INTO sis_course VALUES ('NURS101', 'Introduction to Nursing Practice', 3.0);
-INSERT INTO sis_course VALUES ('NURS210', 'Human Anatomy & Physiology', 3.0);
+INSERT INTO sis_course VALUES ('NURS210', 'Human Anatomy and Physiology', 3.0);
 
 -- Advanced Digital Tech: Cybersecurity
 INSERT INTO sis_course VALUES ('CYBR110', 'Introduction to Cybersecurity', 3.0);
@@ -557,6 +557,23 @@ INSERT INTO sis_course_prerequisite VALUES ('CPRG200','CPRG300');
 INSERT INTO sis_course_prerequisite VALUES ('CPRG203','CPRG303');
 INSERT INTO sis_course_prerequisite VALUES ('DATA821','DATA822');
 INSERT INTO sis_course_prerequisite VALUES ('DATA822','DATA823');
+
+INSERT INTO sis_course_prerequisite VALUES ('ACCT205','ACCT210');
+INSERT INTO sis_course_prerequisite VALUES ('ACCT210','ACCT310');
+INSERT INTO sis_course_prerequisite VALUES ('MKTG101','MKTG204');
+INSERT INTO sis_course_prerequisite VALUES ('ENGG201','ENGG212');
+INSERT INTO sis_course_prerequisite VALUES ('ENGG212','ENGG301');
+INSERT INTO sis_course_prerequisite VALUES ('ENGG301','MATH210');
+INSERT INTO sis_course_prerequisite VALUES ('MATH210','PHYS305');
+INSERT INTO sis_course_prerequisite VALUES ('MECH220','MECH310');
+INSERT INTO sis_course_prerequisite VALUES ('MECH310','MECH330');
+INSERT INTO sis_course_prerequisite VALUES ('NURS101','NURS210');
+INSERT INTO sis_course_prerequisite VALUES ('CYBR110','CYBR210');
+INSERT INTO sis_course_prerequisite VALUES ('CULN100','CULN200');
+INSERT INTO sis_course_prerequisite VALUES ('GRPH101','GRPH202');
+INSERT INTO sis_course_prerequisite VALUES ('PHOT851','PHOT852');
+INSERT INTO sis_course_prerequisite VALUES ('PHOT852','PHOT853');
+
 
 
 -- 9) SIS_SCHED_COURSE_INSTRUCTOR
