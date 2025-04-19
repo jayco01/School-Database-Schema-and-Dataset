@@ -648,6 +648,33 @@ INSERT INTO sis_sched_course_instructor VALUES (30019,202402,00052036);
 INSERT INTO sis_sched_course_instructor VALUES (30019,202402,00052032);
 INSERT INTO sis_sched_course_instructor VALUES (30020,202403,00052037);
 
+INSERT INTO sis_sched_course_instructor VALUES (40051,202401,00052030);
+INSERT INTO sis_sched_course_instructor VALUES (40052,202402,00052043);
+INSERT INTO sis_sched_course_instructor VALUES (40052,202402,00052042);
+INSERT INTO sis_sched_course_instructor VALUES (40053,202403,00052038);
+INSERT INTO sis_sched_course_instructor VALUES (40053,202403,00052036);
+INSERT INTO sis_sched_course_instructor VALUES (40054,202404,00052035);
+INSERT INTO sis_sched_course_instructor VALUES (40054,202404,00052030);
+INSERT INTO sis_sched_course_instructor VALUES (40055,202401,00052031);
+INSERT INTO sis_sched_course_instructor VALUES (40055,202401,00052034);
+INSERT INTO sis_sched_course_instructor VALUES (40056,202402,00052036);
+INSERT INTO sis_sched_course_instructor VALUES (40056,202402,00052042);
+INSERT INTO sis_sched_course_instructor VALUES (40057,202403,00052037);
+INSERT INTO sis_sched_course_instructor VALUES (40057,202403,00052035);
+INSERT INTO sis_sched_course_instructor VALUES (40058,202404,00052032);
+INSERT INTO sis_sched_course_instructor VALUES (40059,202401,00052034);
+INSERT INTO sis_sched_course_instructor VALUES (40060,202402,00052030);
+INSERT INTO sis_sched_course_instructor VALUES (40060,202402,00052040);
+INSERT INTO sis_sched_course_instructor VALUES (40061,202403,00052032);
+INSERT INTO sis_sched_course_instructor VALUES (40061,202403,00052033);
+INSERT INTO sis_sched_course_instructor VALUES (40062,202404,00052035);
+INSERT INTO sis_sched_course_instructor VALUES (40063,202401,00052034);
+INSERT INTO sis_sched_course_instructor VALUES (40063,202401,00052032);
+INSERT INTO sis_sched_course_instructor VALUES (40064,202402,00052042);
+INSERT INTO sis_sched_course_instructor VALUES (40065,202403,00052035);
+INSERT INTO sis_sched_course_instructor VALUES (40065,202403,00052032);
+
+
 
 -- 10) SIS_STUDENT_COURSE_RECORD
 /*
@@ -754,6 +781,52 @@ INSERT INTO sis_student_course_record VALUES (30019,202402,'CPRG300',000115000,'
 INSERT INTO sis_student_course_record VALUES (30020,202403,'CPRG300',000115003,'D');
 INSERT INTO sis_student_course_record VALUES (30020,202403,'CPRG300',000115000,'A+');
 INSERT INTO sis_student_course_record VALUES (30020,202403,'CPRG300',000115010,'B+');
+
+INSERT INTO sis_student_course_record VALUES (40051,202401,'ACCT210',000115008,'A+');
+INSERT INTO sis_student_course_record VALUES (40051,202401,'ACCT210',000115006,'D');
+INSERT INTO sis_student_course_record VALUES (40052,202402,'ACCT310',000115007,'B+');
+INSERT INTO sis_student_course_record VALUES (40052,202402,'ACCT310',000115012,'A');
+INSERT INTO sis_student_course_record VALUES (40053,202403,'MKTG101',000115011,'B');
+INSERT INTO sis_student_course_record VALUES (40053,202403,'MKTG101',000115005,'A+');
+INSERT INTO sis_student_course_record VALUES (40053,202403,'MKTG101',000115004,'B');
+INSERT INTO sis_student_course_record VALUES (40054,202404,'MKTG204',000115012,'D');
+INSERT INTO sis_student_course_record VALUES (40054,202404,'MKTG204',000115013,'A');
+INSERT INTO sis_student_course_record VALUES (40055,202401,'MECH220',000115015,'B');
+INSERT INTO sis_student_course_record VALUES (40055,202401,'MECH220',000115005,'C');
+INSERT INTO sis_student_course_record VALUES (40055,202401,'MECH220',000115003,'I');
+INSERT INTO sis_student_course_record VALUES (40055,202401,'MECH220',000115009,'B+');
+INSERT INTO sis_student_course_record VALUES (40056,202402,'MECH310',000115002,'B+');
+INSERT INTO sis_student_course_record VALUES (40056,202402,'MECH310',000115006,'B+');
+INSERT INTO sis_student_course_record VALUES (40057,202403,'MECH330',000115006,'A+');
+INSERT INTO sis_student_course_record VALUES (40057,202403,'MECH330',000115014,'B+');
+INSERT INTO sis_student_course_record VALUES (40058,202404,'NURS101',000115001,'B+');
+INSERT INTO sis_student_course_record VALUES (40058,202404,'NURS101',000115014,'I');
+INSERT INTO sis_student_course_record VALUES (40058,202404,'NURS101',000115004,'I');
+INSERT INTO sis_student_course_record VALUES (40059,202401,'NURS210',000115008,'B');
+INSERT INTO sis_student_course_record VALUES (40059,202401,'NURS210',000115004,'B+');
+INSERT INTO sis_student_course_record VALUES (40059,202401,'NURS210',000115001,'B');
+INSERT INTO sis_student_course_record VALUES (40059,202401,'NURS210',000115012,'C');
+INSERT INTO sis_student_course_record VALUES (40060,202402,'CYBR110',000115005,'A+');
+INSERT INTO sis_student_course_record VALUES (40060,202402,'CYBR110',000115006,'B+');
+INSERT INTO sis_student_course_record VALUES (40060,202402,'CYBR110',000115013,'I');
+INSERT INTO sis_student_course_record VALUES (40060,202402,'CYBR110',000115004,'B+');
+INSERT INTO sis_student_course_record VALUES (40061,202403,'CYBR210',000115008,'B+');
+INSERT INTO sis_student_course_record VALUES (40061,202403,'CYBR210',000115010,'A');
+INSERT INTO sis_student_course_record VALUES (40061,202403,'CYBR210',000115005,'A');
+INSERT INTO sis_student_course_record VALUES (40062,202404,'CULN100',000115005,'B+');
+INSERT INTO sis_student_course_record VALUES (40062,202404,'CULN100',000115001,'C');
+INSERT INTO sis_student_course_record VALUES (40063,202401,'CULN200',000115011,'B+');
+INSERT INTO sis_student_course_record VALUES (40063,202401,'CULN200',000115003,'B');
+INSERT INTO sis_student_course_record VALUES (40063,202401,'CULN200',000115008,'I');
+INSERT INTO sis_student_course_record VALUES (40064,202402,'GRPH101',000115008,'C');
+INSERT INTO sis_student_course_record VALUES (40064,202402,'GRPH101',000115011,'I');
+INSERT INTO sis_student_course_record VALUES (40064,202402,'GRPH101',000115004,'C');
+INSERT INTO sis_student_course_record VALUES (40064,202402,'GRPH101',000115005,'A');
+INSERT INTO sis_student_course_record VALUES (40065,202403,'GRPH202',000115002,'B+');
+INSERT INTO sis_student_course_record VALUES (40065,202403,'GRPH202',000115004,'B');
+INSERT INTO sis_student_course_record VALUES (40065,202403,'GRPH202',000115003,'F');
+INSERT INTO sis_student_course_record VALUES (40065,202403,'GRPH202',000115005,'A+');
+
 
 
 COMMIT;
