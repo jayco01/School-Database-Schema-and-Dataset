@@ -587,18 +587,41 @@ I’ve got CRNs like 10001, 10002, etc. (from SIS_SCHEDULED_COURSE), and instruc
 Can you give me around 12–15 insert statements that assign instructors to scheduled courses?
 Make sure every course has at least one instructor, and include at least one course that’s co-taught by two instructors."
 */
-INSERT INTO sis_sched_course_instructor VALUES (10001,202401,00052030);
-INSERT INTO sis_sched_course_instructor VALUES (10002,202401,00052031);
+INSERT INTO sis_sched_course_instructor VALUES (10001,202401,00052037);
+INSERT INTO sis_sched_course_instructor VALUES (10002,202401,00052039);
 INSERT INTO sis_sched_course_instructor VALUES (10009,202401,00052032);
-INSERT INTO sis_sched_course_instructor VALUES (10009,202401,00052033);
-INSERT INTO sis_sched_course_instructor VALUES (10003,202402,00052034);
+INSERT INTO sis_sched_course_instructor VALUES (10003,202402,00052030);
 INSERT INTO sis_sched_course_instructor VALUES (10004,202402,00052035);
-INSERT INTO sis_sched_course_instructor VALUES (10005,202403,00052036);
-INSERT INTO sis_sched_course_instructor VALUES (10006,202403,00052037);
-INSERT INTO sis_sched_course_instructor VALUES (10010,202403,00052038);
-INSERT INTO sis_sched_course_instructor VALUES (10007,202404,00052039);
-INSERT INTO sis_sched_course_instructor VALUES (10008,202404,00052030);
-INSERT INTO sis_sched_course_instructor VALUES (10008,202404,00052031);
+INSERT INTO sis_sched_course_instructor VALUES (10005,202403,00052032);
+INSERT INTO sis_sched_course_instructor VALUES (10006,202403,00052030);
+INSERT INTO sis_sched_course_instructor VALUES (10010,202403,00052036);
+INSERT INTO sis_sched_course_instructor VALUES (10007,202404,00052034);
+INSERT INTO sis_sched_course_instructor VALUES (10007,202404,00052033);
+INSERT INTO sis_sched_course_instructor VALUES (10008,202404,00052034);
+INSERT INTO sis_sched_course_instructor VALUES (30001,202402,00052038);
+INSERT INTO sis_sched_course_instructor VALUES (30001,202402,00052030);
+INSERT INTO sis_sched_course_instructor VALUES (30002,202403,00052036);
+INSERT INTO sis_sched_course_instructor VALUES (30003,202404,00052036);
+INSERT INTO sis_sched_course_instructor VALUES (30003,202404,00052037);
+INSERT INTO sis_sched_course_instructor VALUES (30004,202404,00052032);
+INSERT INTO sis_sched_course_instructor VALUES (30005,202402,00052033);
+INSERT INTO sis_sched_course_instructor VALUES (30006,202403,00052039);
+INSERT INTO sis_sched_course_instructor VALUES (30007,202401,00052036);
+INSERT INTO sis_sched_course_instructor VALUES (30008,202402,00052031);
+INSERT INTO sis_sched_course_instructor VALUES (30009,202401,00052039);
+INSERT INTO sis_sched_course_instructor VALUES (30010,202401,00052030);
+INSERT INTO sis_sched_course_instructor VALUES (30011,202403,00052034);
+INSERT INTO sis_sched_course_instructor VALUES (30012,202401,00052030);
+INSERT INTO sis_sched_course_instructor VALUES (30013,202403,00052031);
+INSERT INTO sis_sched_course_instructor VALUES (30014,202402,00052036);
+INSERT INTO sis_sched_course_instructor VALUES (30015,202403,00052037);
+INSERT INTO sis_sched_course_instructor VALUES (30016,202402,00052033);
+INSERT INTO sis_sched_course_instructor VALUES (30017,202403,00052037);
+INSERT INTO sis_sched_course_instructor VALUES (30018,202402,00052036);
+INSERT INTO sis_sched_course_instructor VALUES (30018,202402,00052033);
+INSERT INTO sis_sched_course_instructor VALUES (30019,202402,00052036);
+INSERT INTO sis_sched_course_instructor VALUES (30019,202402,00052032);
+INSERT INTO sis_sched_course_instructor VALUES (30020,202403,00052037);
 
 
 -- 10) SIS_STUDENT_COURSE_RECORD
