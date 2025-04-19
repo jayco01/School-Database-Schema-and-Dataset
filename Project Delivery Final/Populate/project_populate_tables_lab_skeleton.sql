@@ -472,6 +472,11 @@ INSERT INTO sis_student_credential VALUES (000115089,018932,'23-Sep-2021','13-Se
 INSERT INTO sis_student_credential VALUES (000115090,018932,'05-Nov-2022','21-Aug-2024','E');
 INSERT INTO sis_student_credential VALUES (000115090,043256,'20-Jan-2024',NULL,'A');
 
+INSERT INTO sis_student_credential VALUES (000111023,098321,'15-JAN-2023',NULL,'A');
+INSERT INTO sis_student_credential VALUES (000112004,079962,'15-JAN-2023','15-Jan-2025','G');
+INSERT INTO sis_student_credential VALUES (000115000,062235,'15-JAN-2023',NULL,'A');
+
+
 
 
 -- 7) SIS_CREDENTIAL_COURSE
@@ -529,6 +534,8 @@ INSERT INTO sis_credential_course VALUES (012345,'GRPH202',0);
 INSERT INTO sis_credential_course VALUES (029876,'CULN100',0);
 INSERT INTO sis_credential_course VALUES (029876,'CULN200',0);
 INSERT INTO sis_credential_course VALUES (098321,'BSNI305',0);
+
+
 
 
 
