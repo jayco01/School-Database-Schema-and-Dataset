@@ -1,7 +1,8 @@
-clear columns
-clear breaks
+
 SPOOL "C:/cprg250/instructor_sections_class_average_output.txt"
 
+clear columns
+clear breaks
 SET linesize 170
 SET pagesize 80
 SET TRIMOUT ON  
@@ -45,7 +46,9 @@ JOIN sis_scheduled_course sc
 JOIN sis_student_course_record scr
     ON sc.crn = scr.crn
     AND sc.semester_code = scr.semester_code
-GROUP BY i.first_name, i.last_name, sc.semester_code, sc.course_code, sc.section_code
+GROUP BY i.first_name, i.last_name, 
+    sc.semester_code, sc.course_code, 
+    sc.section_code
 ORDER BY 4,3,5,2,6
 ;
 
