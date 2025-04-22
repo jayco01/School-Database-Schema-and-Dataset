@@ -1,5 +1,29 @@
 SPOOL "C:/cprg250/student_at_risk_output.txt"
 
+-- I used ChatGPT4.0 to generate this report
+
+-- Initial Prompt:
+/*
+I’m trying to make a report in Oracle 12c that shows which programs have the most at risk students.
+At risk means the student status is E, S, or AP.
+I want to see the program name, the school it's under, the number of at risk students, and the percentage of them compared to the total students in that program.
+Add a total row using ROLLUP.
+*/
+
+-- Follow up prompt:
+/*
+I also need to see the total number of students per program.
+The percentage should be based on that.
+Format the percentage like 34% and make sure the output is clean for spool.
+*/
+
+-- Folloe up prompt:
+/*
+Use COUNT(DISTINCT student_id) to avoid duplicates.
+Use a clear alias for the percentage like percent_flagged.
+Don’t include extra columns in GROUPING SETS, just what’s needed for the ROLLUP.
+*/
+
 
 clear columns
 clear breaks
