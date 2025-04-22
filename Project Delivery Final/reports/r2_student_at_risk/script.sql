@@ -8,41 +8,31 @@ SET pagesize 80
 SET TRIMOUT ON  
 SET TRIMSPOOL ON    
 
-COLUMN school_associated FORMAT A30;
-COLUMN credential_name FORMAT A20;
+COLUMN credential_name FORMAT A20
+COLUMN school FORMAT A30
+COLUMN total_students FORMAT 999
+COLUMN flagged_student FORMAT 999
+COLUMN flagged_pct FORMAT A11
 
-SELECT c.school_associated, c.name AS credential_name, COUNT(s.status) AS at_risk, total.total_student AS school_total_student
--- , (COUNT(s.status)/total.total_student) AS risk_rate
-FROM sis_student s
-JOIN sis_student_credential scr 
-    ON s.student_id = scr.student_id
-JOIN sis_credential c
-    ON scr.credential_number = c.credential_number
-JOIN 
-    (
-        SELECT c.school_associated, COUNT(s.student_id) AS total_student
-    FROM sis_student s 
-    JOIN sis_student_credential scr
-        ON s.student_id = scr.student_id
-    JOIN sis_credential c
-        ON scr.credential_number = c.credential_number
-    GROUP BY c.school_associated
-    ) total 
-    ON c.school_associated = total.school_associated
-WHERE s.status IN ('E','S','AP')
-GROUP BY ROLLUP (c.school_associated, c.name, total.total_student)
-ORDER BY c.school_associated, c.name
+SELECT 
+    c.name AS credential_name,
+    c.school_associated AS school,
+    COUNT(DISTINCT CASE WHEN s.status IN ('E', 'S', 'AP') THEN s.student_id END) AS flagged_student,
+    COUNT(DISTINCT sc.student_id) AS total_students,
+    LPAD(TO_CHAR(
+        ROUND(
+            COUNT(DISTINCT CASE WHEN s.status IN ('E', 'S', 'AP') THEN s.student_id END) 
+            * 100.0 / COUNT(DISTINCT sc.student_id), 0
+        )
+    ) || '%',10) AS flagged_pct
+FROM sis_student_credential sc
+JOIN sis_credential c 
+    ON sc.credential_number = c.credential_number
+JOIN sis_student s 
+    ON sc.student_id = s.student_id
+GROUP BY ROLLUP (c.school_associated, c.name)
+ORDER BY 2, 1, 3
 ;
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -88,7 +88,4 @@ ORDER BY 5, 6 DESC, 3, 2
 
 
 
-
-
-
 SPOOL OFF
