@@ -73,7 +73,9 @@ student_avg AS (
     GROUP BY s.student_id, scred.credential_number
 )
 SELECT s.student_id, s.first_name, s.last_name, 
-    c.credential_number AS "CREDENTIAL#", c.name AS credential_name, sa.total_avg AS student_avg, pa.total_avg AS credential_avg,
+    c.credential_number AS "CREDENTIAL#", 
+    c.name AS credential_name, sa.total_avg AS student_avg, 
+    pa.total_avg AS credential_avg,
     LPAD(TO_CHAR(ROUND(((sa.total_avg/pa.total_avg)*100),0)) || '%',12) AS relative_performance
 FROM program_avg pa
 JOIN student_avg sa

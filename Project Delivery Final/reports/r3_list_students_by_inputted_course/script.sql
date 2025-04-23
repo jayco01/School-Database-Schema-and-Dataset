@@ -13,7 +13,8 @@ COLUMN last_name FORMAT A20;
 COLUMN course_code FORMAT A11;
 
 
-SELECT DISTINCT s.student_id, s.first_name, s.last_name, scr.semester_code, scr.course_code
+SELECT DISTINCT s.student_id, s.first_name, 
+    s.last_name, scr.semester_code, scr.course_code
 FROM sis_student s
 JOIN sis_student_course_record scr 
     ON s.student_id = scr.student_id
