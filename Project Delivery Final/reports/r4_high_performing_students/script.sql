@@ -85,8 +85,7 @@ JOIN sis_student s
 JOIN sis_credential c
     ON sa.credential_number = c.credential_number
 WHERE sa.total_avg > pa.total_avg
-ORDER BY 5, 6 DESC, 3, 2
-;
+ORDER BY 5, 6 DESC, 3, 2;
 
 
 

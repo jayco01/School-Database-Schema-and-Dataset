@@ -49,7 +49,6 @@ JOIN sis_student_course_record scr
 GROUP BY i.first_name, i.last_name, 
     sc.semester_code, sc.course_code, 
     sc.section_code
-ORDER BY 4,3,6
-;
+ORDER BY 4,3,6;
 
 SPOOL OFF

@@ -1,6 +1,7 @@
 SPOOL "C:/cprg250/student_at_risk_output.txt"
 
 -- I used ChatGPT4.0 to generate this report
+-- At the end of the third prompt, the AI gave me a script which resulted in some errors but I was able to make a few changes to get the script working
 
 -- Initial Prompt:
 /*
@@ -19,9 +20,8 @@ Format the percentage like 99%
 
 -- Follow up prompt:
 /*
-Use COUNT(DISTINCT student_id) to avoid duplicates
-Use a clear alias for the percentage like percent_flagged
-Don’t include extra columns in GROUPING SETS, just what’s needed for the ROLLUP
+Use a clear alias for the percentage like flagged_pct
+Don’t include extra columns in the GROUP BY, just what’s needed for the ROLLUP
 */
 
 
@@ -41,12 +41,12 @@ COLUMN flagged_pct FORMAT A11
 SELECT 
     c.name AS credential_name,
     c.school_associated AS school,
-    COUNT(DISTINCT CASE WHEN s.status IN ('E', 'S', 'AP') THEN s.student_id END) AS flagged_student,
-    COUNT(DISTINCT sc.student_id) AS total_students,
+    COUNT(CASE WHEN s.status IN ('E', 'S', 'AP') THEN s.student_id END) AS flagged_student, 
+    COUNT(sc.student_id) AS total_students,
     LPAD(TO_CHAR(
         ROUND(
-            COUNT(DISTINCT CASE WHEN s.status IN ('E', 'S', 'AP') THEN s.student_id END) 
-            * 100.0 / COUNT(DISTINCT sc.student_id), 0
+            COUNT(CASE WHEN s.status IN ('E', 'S', 'AP') THEN s.student_id END) 
+            * 100.0 / COUNT(sc.student_id), 0
         )
     ) || '%',10) AS flagged_pct
 FROM sis_student_credential sc
@@ -55,9 +55,7 @@ JOIN sis_credential c
 JOIN sis_student s 
     ON sc.student_id = s.student_id
 GROUP BY ROLLUP (c.school_associated, c.name)
-ORDER BY 2, 1, 3
-;
-
+ORDER BY 2, 1, 3;
 
 
 SPOOL OFF

@@ -1,0 +1,54 @@
+
+STUDENT_ID FIRST_NAME      LAST_NAME            CREDENTIAL# CREDENTIAL_NAME      STUDENT_AVG CREDENTIAL_AVG RELATIVE_PERFORMANCE
+---------- --------------- -------------------- ----------- -------------------- ----------- -------------- --------------------
+    110055 Kevin           Durant                     54321 Accounting                 81.50          65.50         124%
+    115076 Haley           Jones                      54321 Accounting                 76.64          65.50         117%
+    115003 Giannis         Antetokounmpo              54321 Accounting                 73.63          65.50         112%
+    115028 Desmond         Bane                       54321 Accounting                 71.80          65.50         110%
+    115071 Charli          Collier                    54321 Accounting                 67.79          65.50         103%
+    115019 RJ              Barrett                    96325 Civil                      87.38          66.02         132%
+    115029 Jordan          Poole                      96325 Civil                      81.20          66.02         123%
+    115076 Haley           Jones                      96325 Civil                      76.64          66.02         116%
+    115024 Josh            Giddey                     96325 Civil                      71.86          66.02         109%
+    115064 Kelsey          Plum                       29876 Culinary Arts              88.00          73.35         120%
+    110055 Kevin           Durant                     29876 Culinary Arts              81.50          73.35         111%
+    115087 Brittney        Sykes                      29876 Culinary Arts              77.50          73.35         106%
+    115029 Jordan          Poole                      12345 Cybersecurity              81.20          67.62         120%
+    115006 Nikola          Jokic                      12345 Cybersecurity              79.00          67.62         117%
+    115072 Satou           Sabally                    12345 Cybersecurity              73.25          67.62         108%
+    115028 Desmond         Bane                       62235 Data Analysis              71.80          63.54         113%
+    115001 Jayson          Tatum                      62235 Data Analysis              71.75          63.54         113%
+    115008 Tyrese          Haliburton                 62235 Data Analysis              68.75          63.54         108%
+    115068 Aliyah          Boston                     62235 Data Analysis              68.50          63.54         108%
+    115027 Tyler           Herro                      62235 Data Analysis              64.83          63.54         102%
+    115018 Andrew          Wiggins                    98321 Finance                    76.46          66.12         116%
+    115062 Breanna         Stewart                    98321 Finance                    73.95          66.12         112%
+    115024 Josh            Giddey                     98321 Finance                    71.86          66.12         109%
+    115005 Joel            Embiid                     98321 Finance                    70.15          66.12         106%
+    115071 Charli          Collier                    98321 Finance                    67.79          66.12         103%
+    115072 Satou           Sabally                    18932 Graphic Design             73.25          60.34         121%
+    115063 Sabrina         Ionescu                    18932 Graphic Design             66.91          60.34         111%
+    115066 Napheesa        Collier                    24578 Marketing                  88.33          58.17         152%
+    115086 Jasmine         Thomas                     24578 Marketing                  81.33          58.17         140%
+    115003 Giannis         Antetokounmpo              24578 Marketing                  73.63          58.17         127%
+    115080 Tyasha          Harris                     24578 Marketing                  70.67          58.17         121%
+    115026 Bam             Adebayo                    24578 Marketing                  66.33          58.17         114%
+    115069 Rhyne           Howard                     43256 Mechanical                 78.50          62.52         126%
+    115011 Kawhi           Leonard                    43256 Mechanical                 77.75          62.52         124%
+    115012 Paul            George                     43256 Mechanical                 66.67          62.52         107%
+    115016 Draymond        Green                      43256 Mechanical                 63.60          62.52         102%
+    115061 Aja             Wilson                     37654 Nursing                    89.50          62.58         143%
+    115021 Shai            Gilgeous-Alexander         37654 Nursing                    83.00          62.58         133%
+    115012 Paul            George                     37654 Nursing                    66.67          62.58         107%
+    115004 Jimmy           Butler                     37654 Nursing                    65.67          62.58         105%
+    115027 Tyler           Herro                      37654 Nursing                    64.83          62.58         104%
+    110002 Lebron          James                      79962 Photography                83.00          62.43         133%
+    115070 Caitlin         Clark                      79962 Photography                77.50          62.43         124%
+    115017 Klay            Thompson                   79962 Photography                63.00          62.43         101%
+    115062 Breanna         Stewart                    87952 Software Development       73.95          65.42         113%
+    115010 Bradley         Beal                       87952 Software Development       71.11          65.42         109%
+    115063 Sabrina         Ionescu                    87952 Software Development       66.91          65.42         102%
+    115073 Chennedy        Carter                     87952 Software Development       65.44          65.42         100%
+
+48 rows selected.
+

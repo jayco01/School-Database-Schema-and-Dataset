@@ -1,0 +1,26 @@
+
+CREDENTIAL_NAME      SCHOOL                         FLAGGED_STUDENT TOTAL_STUDENTS FLAGGED_PCT
+-------------------- ------------------------------ --------------- -------------- -----------
+Cybersecurity        Advanced Digital Technology                  2              6        33%
+Data Analysis        Advanced Digital Technology                  2             10        20%
+Software Development Advanced Digital Technology                  3              8        38%
+                     Advanced Digital Technology                  7             24        29%
+Photography          Arts                                         1              7        14%
+                     Arts                                         1              7        14%
+Accounting           Business                                     4             12        33%
+Finance              Business                                     3             10        30%
+Marketing            Business                                     1             11         9%
+                     Business                                     8             33        24%
+Civil                Engineering                                  6              9        67%
+Mechanical           Engineering                                  3              8        38%
+                     Engineering                                  9             17        53%
+Nursing              Health Sciences                              5             10        50%
+                     Health Sciences                              5             10        50%
+Culinary Arts        Hospitality                                  0              5         0%
+                     Hospitality                                  0              5         0%
+Graphic Design       Media Arts                                   1              5        20%
+                     Media Arts                                   1              5        20%
+                                                                 31            101        31%
+
+20 rows selected.
+
