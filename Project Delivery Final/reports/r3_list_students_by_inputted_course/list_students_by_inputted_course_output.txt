@@ -1,30 +1,21 @@
-Enter value for course_code: mktg101
+Enter value for course_code: acct310
 old   6: WHERE scr.course_code = UPPER(TRIM('&course_code'))
-new   6: WHERE scr.course_code = UPPER(TRIM('mktg101'))
+new   6: WHERE scr.course_code = UPPER(TRIM('acct310'))
 
 STUDENT_ID FIRST_NAME      LAST_NAME            SEMESTER_CODE COURSE_CODE
 ---------- --------------- -------------------- ------------- -----------
-    110055 Kevin           Durant                      202403 MKTG101
-    111023 Lamelo          Ball                        202403 MKTG101
-    115003 Giannis         Antetokounmpo               202403 MKTG101
-    115016 Draymond        Green                       202403 MKTG101
-    115028 Desmond         Bane                        202403 MKTG101
-    115030 Fred            VanVleet                    202403 MKTG101
-    115071 Charli          Collier                     202403 MKTG101
-    115074 Jackie          Young                       202403 MKTG101
-    115076 Haley           Jones                       202403 MKTG101
-    115079 DiJonai         Carrington                  202403 MKTG101
-    115085 Ashley          Joens                       202403 MKTG101
-    115089 Kia             Nurse                       202403 MKTG101
-    115002 Stephen         Curry                       202403 MKTG101
-    115007 Zion            Williamson                  202403 MKTG101
-    115015 Anthony         Edwards                     202403 MKTG101
-    115026 Bam             Adebayo                     202403 MKTG101
-    115066 Napheesa        Collier                     202403 MKTG101
-    115077 Lexie           Hull                        202403 MKTG101
-    115080 Tyasha          Harris                      202403 MKTG101
-    115083 Olivia          Nelson-Ododa                202403 MKTG101
-    115086 Jasmine         Thomas                      202403 MKTG101
+    115003 Giannis         Antetokounmpo               202402 ACCT310
+    111023 Lamelo          Ball                        202402 ACCT310
+    115028 Desmond         Bane                        202402 ACCT310
+    115079 DiJonai         Carrington                  202402 ACCT310
+    115071 Charli          Collier                     202402 ACCT310
+    110055 Kevin           Durant                      202402 ACCT310
+    115016 Draymond        Green                       202402 ACCT310
+    115085 Ashley          Joens                       202402 ACCT310
+    115076 Haley           Jones                       202402 ACCT310
+    115089 Kia             Nurse                       202402 ACCT310
+    115030 Fred            VanVleet                    202402 ACCT310
+    115074 Jackie          Young                       202402 ACCT310
 
-21 rows selected.
+12 rows selected.
 

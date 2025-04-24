@@ -13,7 +13,7 @@ COLUMN last_name FORMAT A15;
 COLUMN SEMESTER FORMAT A10;
 COLUMN course_code FORMAT A12; 
 COLUMN SECTION FORMAT A7; 
-COLUMN class_avg FORMAT A11; 
+COLUMN class_avg FORMAT A9; 
 
 SELECT i.first_name, i.last_name, 
     RPAD(sc.semester_code,10) AS "SEMESTER", 
@@ -36,7 +36,7 @@ SELECT i.first_name, i.last_name,
             WHEN N'I' THEN NULL
             ELSE NULL
         END
-    ),99.99),8) AS class_avg
+    ),99.99) || '%',9) AS class_avg
 FROM sis_instructor i
 JOIN sis_sched_course_instructor sci
     ON i.instructor_id = sci.instructor_id

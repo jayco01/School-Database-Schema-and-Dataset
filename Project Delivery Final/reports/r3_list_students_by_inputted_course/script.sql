@@ -18,7 +18,8 @@ SELECT DISTINCT s.student_id, s.first_name,
 FROM sis_student s
 JOIN sis_student_course_record scr 
     ON s.student_id = scr.student_id
-WHERE scr.course_code = UPPER(TRIM('&course_code'));
+WHERE scr.course_code = UPPER(TRIM('&course_code'))
+ORDER BY 3,2;
 
 
 SPOOL OFF
